@@ -1,0 +1,285 @@
+:root {
+  --bg: #f8f7f4;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --text-muted: #555;
+  --accent: #2d5a27;
+  --border: #ddd;
+  --nav-height: 56px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* ── Navigation ── */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.site-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.9375rem;
+  font-weight: normal;
+  color: var(--text);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  letter-spacing: 0.01em;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+  color: var(--text);
+}
+
+nav a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ── Page layout ── */
+
+main {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  padding: 4rem 0;
+}
+
+section + section {
+  border-top: 1px solid var(--border);
+}
+
+/* ── Section headers ── */
+
+.section-header {
+  margin-bottom: 2.5rem;
+}
+
+.section-header h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.625rem;
+  font-weight: normal;
+  color: var(--text);
+}
+
+.section-header p {
+  margin-top: 0.375rem;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+}
+
+/* ── Cards (journals + assignments) ── */
+
+article {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.75rem 2rem;
+}
+
+article + article {
+  margin-top: 1.25rem;
+}
+
+/* ── Journal entries ── */
+
+.journal-label {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+
+.journal-entry h3 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.125rem;
+  font-weight: normal;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.journal-entry p {
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.journal-entry p:last-of-type {
+  margin-bottom: 0;
+}
+
+.mind-map {
+  margin-top: 1.5rem;
+}
+
+.mind-map img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+
+.mind-map figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.load-error {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 0.9375rem;
+}
+
+.load-error code {
+  font-style: normal;
+  background: #f0f0ee;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-size: 0.875em;
+}
+
+/* ── Assignment entries ── */
+
+.assignment-entry h3 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.125rem;
+  font-weight: normal;
+  color: var(--text);
+  margin-bottom: 1.125rem;
+}
+
+.assignment-body p {
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.assignment-body p:last-child {
+  margin-bottom: 0;
+}
+
+.file-embed {
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.file-embed iframe {
+  display: block;
+  width: 100%;
+  height: 560px;
+  border: none;
+}
+
+.feedback-section {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.feedback-section h4 {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.feedback-section p {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── Rationale ── */
+
+.rationale-content p {
+  color: var(--text);
+  margin-bottom: 0.875rem;
+}
+
+.rationale-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Footer ── */
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+/* ── Mobile ── */
+
+@media (max-width: 600px) {
+  nav {
+    padding: 0 1rem;
+  }
+
+  nav ul {
+    gap: 1.25rem;
+  }
+
+  .site-title {
+    font-size: 0.8125rem;
+  }
+
+  article {
+    padding: 1.25rem 1.25rem;
+  }
+
+  .file-embed iframe {
+    height: 360px;
+  }
+}

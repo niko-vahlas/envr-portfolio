@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ENVR 300 Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <span class="site-title">ENVR 300 Portfolio</span>
+        <ul>
+          <li><a href="#journals" id="nav-journals">Journals</a></li>
+          <li><a href="#assignments" id="nav-assignments">Assignments</a></li>
+          <li><a href="#rationale" id="nav-rationale">Rationale</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ── Journals ── -->
+      <section id="journals">
+        <div class="section-header">
+          <h2>Journals</h2>
+        </div>
+
+        <article
+          class="journal-entry"
+          data-src="journals/journal1_LearningPlan.md"
+        >
+          <span class="journal-label">Journal 1</span>
+          <h3>Learning Plan</h3>
+          <div class="journal-body"></div>
+        </article>
+
+        <article
+          class="journal-entry"
+          data-src="journals/journal2_ReadingScientificPapers.md"
+        >
+          <span class="journal-label">Journal 2</span>
+          <h3>Reading Scientific Papers</h3>
+          <div class="journal-body"></div>
+        </article>
+
+        <article
+          class="journal-entry"
+          data-src="journals/journal3_DataAnalysisSkills.md"
+        >
+          <span class="journal-label">Journal 3</span>
+          <h3>Data Analysis Skills</h3>
+          <div class="journal-body"></div>
+        </article>
+
+        <article
+          class="journal-entry"
+          data-src="journals/journal4_TeamProjectsOnModelling.md"
+        >
+          <span class="journal-label">Journal 4</span>
+          <h3>Team Projects on Modelling</h3>
+          <div class="journal-body"></div>
+        </article>
+
+        <article class="journal-entry" data-src="journals/journal5_Proposal.md">
+          <span class="journal-label">Journal 5</span>
+          <h3>Proposal</h3>
+          <div class="journal-body"></div>
+          <figure class="mind-map">
+            <img src="journals/journal5MindMap.png" />
+          </figure>
+        </article>
+      </section>
+
+      <!-- ── Assignments ── -->
+      <section id="assignments">
+        <div class="section-header">
+          <h2>Assignments</h2>
+          <p>
+            Selected work completed during the term, with instructor feedback.
+          </p>
+        </div>
+
+        <article class="assignment-entry" data-src="assignments/Assignment1.md">
+          <h3>Summarizing Science</h3>
+          <div class="assignment-body"></div>
+          <div class="feedback-section">
+            <h4>Feedback</h4>
+            <p>No feedback, perfect marks.</p>
+          </div>
+        </article>
+
+        <article class="assignment-entry">
+          <h3>Research Proposal: Topic</h3>
+          <div class="file-embed">
+            <iframe
+              src="assignments/Assignment2.pdf"
+              title="Assignment 2"
+            ></iframe>
+          </div>
+          <div class="feedback-section">
+            <h4>Feedback</h4>
+            <p>
+              Do not include yes or no questions, list the questions, specify
+              the urban environment, indent the references
+            </p>
+          </div>
+        </article>
+
+        <article class="assignment-entry">
+          <h3>Research Proposal: Title and Annotated Bibliography</h3>
+          <div class="file-embed">
+            <iframe
+              src="assignments/Assignment3.pdf"
+              title="Assignment 3"
+            ></iframe>
+          </div>
+          <div class="feedback-section">
+            <h4>Feedback</h4>
+            <p>
+              Formatting issues, and told me to rephrase my research questions.
+              Also had positive feedback for some stats I included.
+            </p>
+          </div>
+        </article>
+
+        <article class="assignment-entry">
+          <h3>Team Assignment: Prerecorded video presentation</h3>
+          <div class="file-embed">
+            <iframe
+              src="assignments/Assignment4.pdf"
+              title="Assignment 4"
+            ></iframe>
+          </div>
+          <div class="feedback-section">
+            <h4>Feedback</h4>
+            <p>No feedback yet.</p>
+          </div>
+        </article>
+
+        <article class="assignment-entry">
+          <h3>Research Proposal: Final Version</h3>
+          <div class="file-embed">
+            <iframe
+              src="assignments/Assignment5.pdf"
+              title="Assignment 5"
+            ></iframe>
+          </div>
+          <div class="feedback-section">
+            <h4>Feedback</h4>
+            <p>No feedback yet.</p>
+          </div>
+        </article>
+      </section>
+
+      <!-- ── Rationale ── -->
+      <section id="rationale">
+        <div class="section-header">
+          <h2>Rationale</h2>
+        </div>
+        <div class="rationale-content" id="rationale-body"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>ENVR 300 &middot; Portfolio</p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

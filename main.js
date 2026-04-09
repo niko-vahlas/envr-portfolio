@@ -38,6 +38,31 @@ if (rationaleBody) {
     });
 }
 
+// Render PDF pages as canvases so they appear when printing
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+  'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+document.querySelectorAll('.file-embed').forEach((embed) => {
+  const iframe = embed.querySelector('iframe');
+  if (!iframe) return;
+
+  const container = document.createElement('div');
+  container.className = 'print-pdf-pages print-only';
+  embed.insertAdjacentElement('afterend', container);
+
+  pdfjsLib.getDocument(iframe.src).promise.then(async (pdf) => {
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i);
+      const viewport = page.getViewport({ scale: 2 });
+      const canvas = document.createElement('canvas');
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
+      container.appendChild(canvas);
+    }
+  });
+});
+
 const navLinks = {
   journals: document.getElementById('nav-journals'),
   assignments: document.getElementById('nav-assignments'),

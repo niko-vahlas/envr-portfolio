@@ -283,3 +283,150 @@ footer {
     height: 360px;
   }
 }
+
+/* ── Print ── */
+
+.print-only {
+  display: none;
+}
+
+.print-pdf-pages canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 2px;
+}
+
+@media print {
+  /* Show/hide */
+  .print-only { display: block !important; }
+  .print-pdf-pages { display: block !important; }
+  header, footer, .file-embed { display: none !important; }
+
+  body {
+    background: white;
+    color: black;
+    font-size: 11pt;
+    line-height: 1.6;
+  }
+
+  main {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  /* TOC page */
+  .print-toc {
+    break-after: always;
+    page-break-after: always;
+    padding: 2rem 0;
+  }
+
+  .print-toc h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 22pt;
+    font-weight: normal;
+    margin-bottom: 2rem;
+  }
+
+  .print-toc h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 14pt;
+    font-weight: normal;
+    border-bottom: 1px solid #999;
+    padding-bottom: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .toc-list {
+    font-size: 12pt;
+    line-height: 2;
+    padding-left: 1.5rem;
+  }
+
+  .toc-list > li {
+    font-weight: 600;
+  }
+
+  .toc-list ol {
+    font-weight: normal;
+    padding-left: 1.5rem;
+    line-height: 1.8;
+  }
+
+  /* Sections */
+  section {
+    padding: 0;
+    border: none;
+  }
+
+  #assignments,
+  #rationale {
+    break-before: always;
+    page-break-before: always;
+  }
+
+  .section-header {
+    margin-bottom: 1.5rem;
+    padding-top: 2rem;
+  }
+
+  .section-header h2 {
+    font-size: 18pt;
+    border-bottom: 2px solid black;
+    padding-bottom: 0.4rem;
+  }
+
+  .section-header p {
+    display: none;
+  }
+
+  /* Articles */
+  article {
+    background: white;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    padding: 1.25rem 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-top: 0 !important;
+  }
+
+  article h3 {
+    font-size: 13pt;
+    margin-bottom: 0.75rem;
+  }
+
+  .journal-label {
+    color: #444;
+  }
+
+  /* Images */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .mind-map {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-top: 1rem;
+  }
+
+  /* Feedback */
+  .feedback-section {
+    border-top: 1px solid #ddd;
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+
+  .feedback-section h4 {
+    color: #333;
+  }
+
+  .feedback-section p {
+    font-size: 10pt;
+    color: #333;
+  }
+}
